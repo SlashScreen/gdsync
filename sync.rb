@@ -33,5 +33,6 @@ end
 if ARGV[0].nil?
   load_requirements_file "addons.yaml"
 else
+  puts File.open("#{ARGV[0].delete_suffix("/")}/addons.yaml").read
   load_requirements_file "#{ARGV[0].delete_suffix("/")}/addons.yaml"
 end
