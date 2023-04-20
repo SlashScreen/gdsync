@@ -1,5 +1,6 @@
 GDsync is an extremely rudimentary tool for Godot that will automatically sync your addons with a remote repository, so long as they are described in a `addons.yaml` file.  
 This tool may be better off redone as a GDExtension tool, rather than a ruby file.
+
 ## How to use
 
 The current way to use this is:  
@@ -17,9 +18,9 @@ The format for `addons.yaml` is as follows:
 
 ```yaml
 Addon Name: # Repo name as it would appear if you were to clone it.
-	repo: git@repo.git # Git URI.
-	src_folder: addons/addon_name # The folder in the repo where the addon is- usually in the addons folder. 
-	dest_folder: addons # Your addons folder- usually addons.
+  repo: git@repo.git # Git URI.
+  src_folder: addons/addon_name # The folder in the repo where the addon is- usually in the addons folder. 
+  dest_folder: addons # Your addons folder- usually addons.
 ```
 
 see `addons.yaml` for an example.
