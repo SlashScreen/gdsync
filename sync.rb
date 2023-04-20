@@ -31,5 +31,6 @@ def load_requirements_file(path)
 end
 
 Dir.chdir ARGV[0] unless ARGV[0].nil?
+puts Dir.entries Dir.pwd
 puts File.open("addons.yaml").read
 load_requirements_file "addons.yaml"
