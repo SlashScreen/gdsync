@@ -30,4 +30,8 @@ def load_requirements_file(path)
   end
 end
 
-load_requirements_file "addons.yaml"
+if ARGV[0].nil?
+  load_requirements_file "addons.yaml"
+else
+  load_requirements_file "#{ARGV[0].delete_suffix("/")}/addons.yaml"
+end
