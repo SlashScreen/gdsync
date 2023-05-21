@@ -31,7 +31,7 @@ def load_requirements_file(path)
 		load_requirements_file "#{k}/addons.yaml" if File.exists? "#{k}/addons.yaml"
 		# move folder
 		FileUtils.mkdir_p "#{dest_folder}" unless Dir.exists? "#{dest_folder}" # make dir if it doesnt already exist
-		move_with_overwrite "#{k}/#{src_folder}", "#{dest_folder}/"
+		move_with_overwrite "#{k}/#{src_folder}", "#{dest_folder}/#{k}/"
 		# remove repo
 		FileUtils.remove_dir "#{k}"
 	end
