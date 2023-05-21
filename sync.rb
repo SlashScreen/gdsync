@@ -4,6 +4,15 @@ require 'git'
 require 'fileutils'
 require 'yaml'
 
+def move_with_overwrite(src_dir, dest_dir)
+	Dir.glob(File.join(src_dir, '**', '*')).each do |src_file|
+	  dest_file = File.join(dest_dir, src_file.sub(src_dir + '/', ''))
+	  FileUtils.mkdir_p(File.dirname(dest_file))
+	  FileUtils.rm(dest_file) if File.exist?(dest_file)
+	  FileUtils.mv(src_file, dest_file)
+	end
+  end
+
 def load_requirements_file(path)	
 	# load requirements from file
 	reqs = YAML.load_file(path)
@@ -22,7 +31,7 @@ def load_requirements_file(path)
 		load_requirements_file "#{k}/addons.yaml" if File.exists? "#{k}/addons.yaml"
 		# move folder
 		FileUtils.mkdir_p "#{dest_folder}" unless Dir.exists? "#{dest_folder}" # make dir if it doesnt already exist
-		FileUtils.mv "#{k}/#{src_folder}", "#{dest_folder}/", :force => true
+		move_with_overwrite "#{k}/#{src_folder}", "#{dest_folder}/"
 		# remove repo
 		FileUtils.remove_dir "#{k}"
 	end
