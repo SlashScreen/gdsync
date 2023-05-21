@@ -1,4 +1,4 @@
 Bibliodot:
   repo: git@github.com:SlashScreen/Bibliodot.git
   src_folder: addons/bibliodot
-  dest_folder: addons
+  dest_folder: addons/bibliodot
