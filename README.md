@@ -1,3 +1,5 @@
+# NOTE: This extension is deprecated. Use [gdsync](https://github.com/imjp94/gd-plug) instead.
+
 GDsync is an extremely rudimentary tool for Godot that will automatically sync your addons with a remote repository, so long as they are described in a `addons.yaml` file.
 This tool may be better off redone as a GDExtension tool, rather than a ruby file.
 
